@@ -1,1 +1,10 @@
 C:\Users\Jolly\Desktop\CardCatalogue\CardCatalogue\CardCatalogue\bin\Debug\CardCatalogue.exe.config
+C:\Users\Jolly\Desktop\CardCatalogue\CardCatalogue\CardCatalogue\obj\Debug\CardCatalogue.csprojResolveAssemblyReference.cache
+C:\Users\Jolly\Desktop\CardCatalogue\CardCatalogue\CardCatalogue\obj\Debug\CardCatalogue.InitialForm.resources
+C:\Users\Jolly\Desktop\CardCatalogue\CardCatalogue\CardCatalogue\obj\Debug\CardCatalogue.Properties.Resources.resources
+C:\Users\Jolly\Desktop\CardCatalogue\CardCatalogue\CardCatalogue\obj\Debug\CardCatalogue.csproj.GenerateResource.Cache
+C:\Users\Jolly\Desktop\CardCatalogue\CardCatalogue\CardCatalogue\bin\Debug\CardCatalogue.exe
+C:\Users\Jolly\Desktop\CardCatalogue\CardCatalogue\CardCatalogue\bin\Debug\CardCatalogue.pdb
+C:\Users\Jolly\Desktop\CardCatalogue\CardCatalogue\CardCatalogue\obj\Debug\CardCatalogue.exe
+C:\Users\Jolly\Desktop\CardCatalogue\CardCatalogue\CardCatalogue\obj\Debug\CardCatalogue.pdb
+C:\Users\Jolly\Desktop\CardCatalogue\CardCatalogue\CardCatalogue\obj\Debug\CardCatalogue.AddCardForm.resources
