@@ -12,10 +12,10 @@ namespace CardCatalogue
 {
   public class CardCollection
     {
-        private string CollectionName;
-        private string CardName;
-        private double CardPrice;
-        private bool InDeck;
+        private string CollectionName { get; set; }
+        private string CardName { get; set; }
+        private double CardPrice { get; set; }
+        private bool InDeck { get; set; }
 
        
 
@@ -25,13 +25,13 @@ namespace CardCatalogue
             CardCollection newCollection = new CardCollection();
             newCollection.CollectionName = collectionName;
             XmlSerializer xs = new XmlSerializer(typeof(CardCollection));
-            if (!System.IO.Directory.Exists("collections"))
+            if (!Directory.Exists("collections"))
             {
-                System.IO.Directory.CreateDirectory("collections");
+                Directory.CreateDirectory("collections");
             }
-            using (FileStream fc = new FileStream(@"collections\"+collectionName +".xml", FileMode.Create))
+            using (FileStream fs = new FileStream(@"collections\"+collectionName +".xml", FileMode.Create))
             {
-                xs.Serialize(fc, newCollection);
+                xs.Serialize(fs, newCollection);
             }
             MessageBox.Show("collection created");
 
@@ -39,19 +39,27 @@ namespace CardCatalogue
 
         public void AddCard(string collectionName, string iCardName, double iCardPrice, bool iInDeck)
         {
-            XmlDocument xmlDoc = new XmlDocument();
-            xmlDoc.Load(collectionName);
+           
+
+
+            //it'll save but it won't actually add the elements of the ccardcollection list. 
+            List<CardCollection> collList = new List<CardCollection>();
             CardCollection coll = new CardCollection();
+            coll.CollectionName = collectionName;
             coll.CardName = iCardName;
             coll.CardPrice = iCardPrice;
             coll.InDeck = iInDeck;
-            XmlSerializer xs = new XmlSerializer(typeof(CardCollection));
-            // File.Delete(collectionName);
-            using (FileStream fc = new FileStream(collectionName, FileMode.Append))
+
+            
+            collList.Add(coll);
+
+            XmlSerializer xs = new XmlSerializer(typeof(List<CardCollection>));
+            File.Delete(collectionName);
+            using (FileStream fs = new FileStream(@"collections\" + collectionName, FileMode.Create))
             {
-                xs.Serialize(fc, coll);
+                xs.Serialize(fs, collList);
             }
-            MessageBox.Show("collection created");
+            MessageBox.Show("card added");
 
         }
 

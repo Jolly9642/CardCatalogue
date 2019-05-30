@@ -23,7 +23,7 @@ namespace CardCatalogue
             CardCollection coll = new CardCollection();
 
             //This is not working right now. 
-           // coll.AddCard(collectionLabel.Text, cardNameInput.Text, Convert.ToDouble(priceInput), Convert.ToBoolean(inDeckRadio));
+            coll.AddCard(collectionLabel.Text, cardNameInput.Text, Convert.ToDouble(priceInput.Text), Convert.ToBoolean(inDeckRadio.Checked));
 
         }
     }
