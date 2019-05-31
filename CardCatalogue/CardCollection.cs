@@ -8,15 +8,16 @@ using System.Xml;
 using System.Xml.Serialization;
 using System.Windows.Forms;
 
+
+
 namespace CardCatalogue
 {
   public class CardCollection
     {
-        private string CollectionName { get; set; }
-        private string CardName { get; set; }
-        private double CardPrice { get; set; }
-        private bool InDeck { get; set; }
-
+        public string CollectionName { get; set; }
+        public string CardName { get; set; }
+        public double CardPrice { get; set; }
+        public bool InDeck { get; set; }
        
 
         public void CreateCollection(string collectionName)
@@ -37,30 +38,50 @@ namespace CardCatalogue
 
         }
 
-        public void AddCard(string collectionName, string iCardName, double iCardPrice, bool iInDeck)
+        public void AddCard(string iCollectionName, string iCardName, double iCardPrice, bool iInDeck)
         {
-           
-
-
-            //it'll save but it won't actually add the elements of the ccardcollection list. 
+            //This adds card to a collection. 
+            CardCollection newCard = new CardCollection();
             List<CardCollection> collList = new List<CardCollection>();
-            CardCollection coll = new CardCollection();
-            coll.CollectionName = collectionName;
-            coll.CardName = iCardName;
-            coll.CardPrice = iCardPrice;
-            coll.InDeck = iInDeck;
-
+            //the PopulateCardList method fills the list with all the card before the one being added.
+            newCard.PopulateCardList(collList, iCollectionName);
+            newCard.CollectionName = iCollectionName;
+            newCard.CardName = iCardName;
+            newCard.CardPrice = iCardPrice;
+            newCard.InDeck = iInDeck;
             
-            collList.Add(coll);
+            collList.Add(newCard);
 
             XmlSerializer xs = new XmlSerializer(typeof(List<CardCollection>));
-            File.Delete(collectionName);
-            using (FileStream fs = new FileStream(@"collections\" + collectionName, FileMode.Create))
+            File.Delete(iCollectionName);
+            using (FileStream fs = new FileStream(@"collections\" + iCollectionName, FileMode.Create))
             {
                 xs.Serialize(fs, collList);
             }
-            MessageBox.Show("card added");
+            MessageBox.Show("card added here: " + @"collections\" + iCollectionName);
+        }
 
+        public List<CardCollection> PopulateCardList(List<CardCollection> pCardList, string pCollectionName)
+        {
+            //this populates a list with the previous cards that were added to the card collection.
+            XmlDocument xmlDoc = new XmlDocument();
+            xmlDoc.Load(@"collections\" + pCollectionName);
+            XmlNodeList xCollectionName = xmlDoc.GetElementsByTagName("CollectionName");
+            XmlNodeList xCardName = xmlDoc.GetElementsByTagName("CardName");
+            XmlNodeList xCardPrice = xmlDoc.GetElementsByTagName("CardPrice");
+            XmlNodeList xInDeck = xmlDoc.GetElementsByTagName("InDeck");
+
+            for (int i = 0; i < xCollectionName.Count; i++)
+            {
+                CardCollection arColl = new CardCollection();
+                arColl.CollectionName = xCollectionName[i].InnerText;
+                arColl.CardName = xCardName[i].InnerText;
+                
+                arColl.CardPrice = XmlConvert.ToDouble(xCardPrice[i].InnerText);
+                arColl.InDeck = XmlConvert.ToBoolean(xInDeck[i].InnerText);
+                pCardList.Add(arColl);
+            }
+            return pCardList;
         }
 
 

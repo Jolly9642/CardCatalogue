@@ -12,17 +12,19 @@ namespace CardCatalogue
 {
     public partial class AddCardForm : Form
     {
+       
         public AddCardForm(string collectionName)
         {
             InitializeComponent();
             collectionLabel.Text = collectionName;
+           
         }
 
         private void submitCardButton_Click(object sender, EventArgs e)
         {
             CardCollection coll = new CardCollection();
 
-            //This is not working right now. 
+            //This makes a call to the AddCard method in the CardCollection class to add a new card based on the data in the form.
             coll.AddCard(collectionLabel.Text, cardNameInput.Text, Convert.ToDouble(priceInput.Text), Convert.ToBoolean(inDeckRadio.Checked));
 
         }
