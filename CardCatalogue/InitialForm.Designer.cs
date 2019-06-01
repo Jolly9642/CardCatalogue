@@ -33,6 +33,7 @@
             this.collectionNameLabel = new System.Windows.Forms.Label();
             this.collectionListBox = new System.Windows.Forms.ListBox();
             this.collectionSelectionButton = new System.Windows.Forms.Button();
+            this.cardListBox = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
             // 
             // nameOfCollection
@@ -68,6 +69,7 @@
             this.collectionListBox.Name = "collectionListBox";
             this.collectionListBox.Size = new System.Drawing.Size(120, 290);
             this.collectionListBox.TabIndex = 4;
+            this.collectionListBox.SelectedIndexChanged += new System.EventHandler(this.collectionListBox_SelectedIndexChanged);
             // 
             // collectionSelectionButton
             // 
@@ -79,11 +81,21 @@
             this.collectionSelectionButton.UseVisualStyleBackColor = true;
             this.collectionSelectionButton.Click += new System.EventHandler(this.collectionSelectionButton_Click);
             // 
+            // cardListBox
+            // 
+            this.cardListBox.FormattingEnabled = true;
+            this.cardListBox.Location = new System.Drawing.Point(565, 115);
+            this.cardListBox.Name = "cardListBox";
+            this.cardListBox.Size = new System.Drawing.Size(256, 290);
+            this.cardListBox.TabIndex = 6;
+            this.cardListBox.SelectedIndexChanged += new System.EventHandler(this.cardListBox_SelectedIndexChanged);
+            // 
             // InitialForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(894, 509);
+            this.Controls.Add(this.cardListBox);
             this.Controls.Add(this.collectionSelectionButton);
             this.Controls.Add(this.collectionListBox);
             this.Controls.Add(this.collectionNameLabel);
@@ -103,5 +115,6 @@
         private System.Windows.Forms.Label collectionNameLabel;
         private System.Windows.Forms.ListBox collectionListBox;
         private System.Windows.Forms.Button collectionSelectionButton;
+        private System.Windows.Forms.ListBox cardListBox;
     }
 }

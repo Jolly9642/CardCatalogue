@@ -74,9 +74,16 @@ namespace CardCatalogue
             for (int i = 0; i < xCollectionName.Count; i++)
             {
                 CardCollection arColl = new CardCollection();
+                if(xCardName[i]== null)
+                {
+                    return pCardList;
+                }
+                else if(xCardPrice[i] == null)
+                {
+                    return pCardList;
+                }
                 arColl.CollectionName = xCollectionName[i].InnerText;
                 arColl.CardName = xCardName[i].InnerText;
-                
                 arColl.CardPrice = XmlConvert.ToDouble(xCardPrice[i].InnerText);
                 arColl.InDeck = XmlConvert.ToBoolean(xInDeck[i].InnerText);
                 pCardList.Add(arColl);

@@ -35,6 +35,7 @@
             this.inDeckRadio = new System.Windows.Forms.RadioButton();
             this.collectionLabel = new System.Windows.Forms.Label();
             this.submitCardButton = new System.Windows.Forms.Button();
+            this.backToCollectionsButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // cardNameInput
@@ -99,11 +100,22 @@
             this.submitCardButton.UseVisualStyleBackColor = true;
             this.submitCardButton.Click += new System.EventHandler(this.submitCardButton_Click);
             // 
+            // backToCollectionsButton
+            // 
+            this.backToCollectionsButton.Location = new System.Drawing.Point(13, 368);
+            this.backToCollectionsButton.Name = "backToCollectionsButton";
+            this.backToCollectionsButton.Size = new System.Drawing.Size(127, 23);
+            this.backToCollectionsButton.TabIndex = 7;
+            this.backToCollectionsButton.Text = "Back to Collections";
+            this.backToCollectionsButton.UseVisualStyleBackColor = true;
+            this.backToCollectionsButton.Click += new System.EventHandler(this.backToCollectionsButton_Click);
+            // 
             // AddCardForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(362, 406);
+            this.Controls.Add(this.backToCollectionsButton);
             this.Controls.Add(this.submitCardButton);
             this.Controls.Add(this.collectionLabel);
             this.Controls.Add(this.inDeckRadio);
@@ -127,5 +139,6 @@
         private System.Windows.Forms.RadioButton inDeckRadio;
         private System.Windows.Forms.Label collectionLabel;
         private System.Windows.Forms.Button submitCardButton;
+        private System.Windows.Forms.Button backToCollectionsButton;
     }
 }

@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
 using System.Xml.Serialization;
+using System.Text.RegularExpressions;
 
 namespace CardCatalogue
 {
@@ -18,14 +19,24 @@ namespace CardCatalogue
         {
             InitializeComponent();
             PopulateListBox(collectionListBox, @"collections", "*.xml");
-            
-            
         }
 
         private void collectionNameButton_Click(object sender, EventArgs e)
         {
-            CardCollection newCollection = new CardCollection();
-            newCollection.CreateCollection(nameOfCollection.Text);
+            //this has data validation now.
+            if(!Regex.IsMatch(nameOfCollection.Text, @"^[a-zA-Z]+$"))
+            {
+                MessageBox.Show("You cannot create an empty named collection. Please name the collection.");
+            }
+            else
+            {
+                CardCollection newCollection = new CardCollection();
+                newCollection.CreateCollection(nameOfCollection.Text);
+                collectionListBox.Items.Clear();
+                PopulateListBox(collectionListBox, @"collections", "*.xml");
+            }
+
+            
 
         }
 
@@ -41,9 +52,38 @@ namespace CardCatalogue
 
         private void collectionSelectionButton_Click(object sender, EventArgs e)
         {
-            string selectedCollection = collectionListBox.SelectedItem.ToString();
-            AddCardForm newCardForm = new AddCardForm(selectedCollection);
-            newCardForm.Show();
+            //this has data validation now.
+            if (collectionListBox.SelectedItem == null)
+            {
+                MessageBox.Show("please select a collection");
+            }
+            else
+            {
+                string selectedCollection = collectionListBox.SelectedItem.ToString();
+                AddCardForm newCardForm = new AddCardForm(selectedCollection);
+                newCardForm.Show();
+                this.Hide();
+            }
+
+        }
+
+        private void cardListBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void collectionListBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //Added data validation to the PopulateCardList method to stop any crashing from empty collections. 
+            //Need to work on the formatting of the cardListBox.
+            CardCollection lsbCollection = new CardCollection();
+            List<CardCollection> listCollection = new List<CardCollection>();
+            lsbCollection.PopulateCardList(listCollection, collectionListBox.SelectedItem.ToString());
+            foreach(var item in listCollection)
+            {
+                cardListBox.Items.Add(item.CardName + "----" + item.CardPrice);
+            }
+
         }
     }
 }
