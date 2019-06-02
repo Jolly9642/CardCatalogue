@@ -26,12 +26,6 @@
   </CardCollection>
   <CardCollection>
     <CollectionName>ddd.xml</CollectionName>
-    <CardName>Ulimog</CardName>
-    <CardPrice>23</CardPrice>
-    <InDeck>true</InDeck>
-  </CardCollection>
-  <CardCollection>
-    <CollectionName>ddd.xml</CollectionName>
     <CardName>Finale of Blue</CardName>
     <CardPrice>12</CardPrice>
     <InDeck>false</InDeck>

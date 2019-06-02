@@ -81,9 +81,17 @@ namespace CardCatalogue
             lsbCollection.PopulateCardList(listCollection, collectionListBox.SelectedItem.ToString());
             foreach(var item in listCollection)
             {
-                cardListBox.Items.Add(item.CardName + "----" + item.CardPrice);
+                cardListBox.Items.Add(item.CardName);
             }
 
+        }
+
+        private void removeCardButton_Click(object sender, EventArgs e)
+        {
+            CardCollection delCollection = new CardCollection();
+            
+            delCollection.RemoveCard(collectionListBox.SelectedItem.ToString(), cardListBox.SelectedItem.ToString());
+            MessageBox.Show(cardListBox.SelectedItem.ToString());
         }
     }
 }

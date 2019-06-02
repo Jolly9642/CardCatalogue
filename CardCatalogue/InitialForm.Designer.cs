@@ -34,6 +34,8 @@
             this.collectionListBox = new System.Windows.Forms.ListBox();
             this.collectionSelectionButton = new System.Windows.Forms.Button();
             this.cardListBox = new System.Windows.Forms.ListBox();
+            this.removeCardButton = new System.Windows.Forms.Button();
+            this.editCardButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // nameOfCollection
@@ -90,11 +92,32 @@
             this.cardListBox.TabIndex = 6;
             this.cardListBox.SelectedIndexChanged += new System.EventHandler(this.cardListBox_SelectedIndexChanged);
             // 
+            // removeCardButton
+            // 
+            this.removeCardButton.Location = new System.Drawing.Point(565, 412);
+            this.removeCardButton.Name = "removeCardButton";
+            this.removeCardButton.Size = new System.Drawing.Size(89, 23);
+            this.removeCardButton.TabIndex = 7;
+            this.removeCardButton.Text = "Remove Card";
+            this.removeCardButton.UseVisualStyleBackColor = true;
+            this.removeCardButton.Click += new System.EventHandler(this.removeCardButton_Click);
+            // 
+            // editCardButton
+            // 
+            this.editCardButton.Location = new System.Drawing.Point(677, 412);
+            this.editCardButton.Name = "editCardButton";
+            this.editCardButton.Size = new System.Drawing.Size(75, 23);
+            this.editCardButton.TabIndex = 8;
+            this.editCardButton.Text = "Edit Card";
+            this.editCardButton.UseVisualStyleBackColor = true;
+            // 
             // InitialForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(894, 509);
+            this.Controls.Add(this.editCardButton);
+            this.Controls.Add(this.removeCardButton);
             this.Controls.Add(this.cardListBox);
             this.Controls.Add(this.collectionSelectionButton);
             this.Controls.Add(this.collectionListBox);
@@ -116,5 +139,7 @@
         private System.Windows.Forms.ListBox collectionListBox;
         private System.Windows.Forms.Button collectionSelectionButton;
         private System.Windows.Forms.ListBox cardListBox;
+        private System.Windows.Forms.Button removeCardButton;
+        private System.Windows.Forms.Button editCardButton;
     }
 }

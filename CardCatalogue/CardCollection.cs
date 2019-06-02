@@ -61,6 +61,29 @@ namespace CardCatalogue
             MessageBox.Show("card added here: " + @"collections\" + iCollectionName);
         }
 
+        public void RemoveCard(string rCollectionName, string cardToDelete)
+        {
+            
+            CardCollection delColl = new CardCollection();
+            List<CardCollection> lstOfCards = new List<CardCollection>();
+            delColl.PopulateCardList(lstOfCards, rCollectionName);
+            for(int i = 0; i < lstOfCards.Count; i++)
+            {
+                if (lstOfCards[i].CardName == cardToDelete)
+                {
+                    lstOfCards.RemoveAt(i);   
+                }
+            }
+            XmlSerializer xs = new XmlSerializer(typeof(List<CardCollection>));
+            File.Delete(rCollectionName);
+            using (FileStream fs = new FileStream(@"collections\" + rCollectionName, FileMode.Create))
+            {
+                xs.Serialize(fs, lstOfCards);
+            }
+
+        }
+
+
         public List<CardCollection> PopulateCardList(List<CardCollection> pCardList, string pCollectionName)
         {
             //this populates a list with the previous cards that were added to the card collection.
