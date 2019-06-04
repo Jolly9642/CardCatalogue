@@ -14,18 +14,6 @@
   </CardCollection>
   <CardCollection>
     <CollectionName>ddd.xml</CollectionName>
-    <CardName>ddfdf</CardName>
-    <CardPrice>333</CardPrice>
-    <InDeck>false</InDeck>
-  </CardCollection>
-  <CardCollection>
-    <CollectionName>ddd.xml</CollectionName>
-    <CardName>ddfdf333</CardName>
-    <CardPrice>333</CardPrice>
-    <InDeck>false</InDeck>
-  </CardCollection>
-  <CardCollection>
-    <CollectionName>ddd.xml</CollectionName>
     <CardName>Finale of Blue</CardName>
     <CardPrice>12</CardPrice>
     <InDeck>false</InDeck>
@@ -41,5 +29,11 @@
     <CardName>bluecannon</CardName>
     <CardPrice>344</CardPrice>
     <InDeck>false</InDeck>
+  </CardCollection>
+  <CardCollection>
+    <CollectionName>ddd.xml</CollectionName>
+    <CardName>somethingelse</CardName>
+    <CardPrice>333</CardPrice>
+    <InDeck>true</InDeck>
   </CardCollection>
 </ArrayOfCardCollection>

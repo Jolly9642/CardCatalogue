@@ -65,24 +65,47 @@ namespace CardCatalogue
         {
             
             CardCollection delColl = new CardCollection();
-            List<CardCollection> lstOfCards = new List<CardCollection>();
-            delColl.PopulateCardList(lstOfCards, rCollectionName);
-            for(int i = 0; i < lstOfCards.Count; i++)
+            List<CardCollection> rlstOfCards = new List<CardCollection>();
+            delColl.PopulateCardList(rlstOfCards, rCollectionName);
+            for(int i = 0; i < rlstOfCards.Count; i++)
             {
-                if (lstOfCards[i].CardName == cardToDelete)
+                if (rlstOfCards[i].CardName == cardToDelete)
                 {
-                    lstOfCards.RemoveAt(i);   
+                    rlstOfCards.RemoveAt(i);   
                 }
             }
-            XmlSerializer xs = new XmlSerializer(typeof(List<CardCollection>));
-            File.Delete(rCollectionName);
-            using (FileStream fs = new FileStream(@"collections\" + rCollectionName, FileMode.Create))
-            {
-                xs.Serialize(fs, lstOfCards);
-            }
+
+            delColl.SaveCollection(rCollectionName, rlstOfCards);
 
         }
 
+        public void EditCard(string eCollectionName, string eCardName)
+        {
+            //This might be pointless. 
+            CardCollection editColl = new CardCollection();
+            List<CardCollection> eLstOfCard = new List<CardCollection>();
+            editColl.PopulateCardList(eLstOfCard, eCollectionName);
+            for(int i = 0; i<eLstOfCard.Count; i++)
+            {
+                if(eLstOfCard[i].CardName == eCardName)
+                {
+                    eLstOfCard.RemoveAt(i);
+                    
+                }
+            }
+
+
+        }
+
+        public void SaveCollection(string sCollectionName, List<CardCollection> lstOfCards)
+        {
+            XmlSerializer xs = new XmlSerializer(typeof(List<CardCollection>));
+            File.Delete(sCollectionName);
+            using (FileStream fs = new FileStream(@"collections\" + sCollectionName, FileMode.Create))
+            {
+                xs.Serialize(fs, lstOfCards);
+            }
+        }
 
         public List<CardCollection> PopulateCardList(List<CardCollection> pCardList, string pCollectionName)
         {

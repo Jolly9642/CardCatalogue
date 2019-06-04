@@ -110,6 +110,7 @@
             this.editCardButton.TabIndex = 8;
             this.editCardButton.Text = "Edit Card";
             this.editCardButton.UseVisualStyleBackColor = true;
+            this.editCardButton.Click += new System.EventHandler(this.editCardButton_Click);
             // 
             // InitialForm
             // 

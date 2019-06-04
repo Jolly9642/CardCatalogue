@@ -93,5 +93,18 @@ namespace CardCatalogue
             delCollection.RemoveCard(collectionListBox.SelectedItem.ToString(), cardListBox.SelectedItem.ToString());
             MessageBox.Show(cardListBox.SelectedItem.ToString());
         }
+
+        private void editCardButton_Click(object sender, EventArgs e)
+        {
+            //This isn't really an edit function more of a delete and bring up the add card screen. Needs work so that it functions more like an edit. 
+            CardCollection editCardColl = new CardCollection();
+            editCardColl.RemoveCard(collectionListBox.SelectedItem.ToString(), cardListBox.SelectedItem.ToString());
+            string selectedCollection = collectionListBox.SelectedItem.ToString();
+            AddCardForm newCardForm = new AddCardForm(selectedCollection);
+            newCardForm.Show();
+            this.Hide();
+
+
+        }
     }
 }
