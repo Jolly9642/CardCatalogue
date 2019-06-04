@@ -8,3 +8,6 @@ C:\Users\Jolly\Desktop\CardCatalogue\CardCatalogue\CardCatalogue\bin\Debug\CardC
 C:\Users\Jolly\Desktop\CardCatalogue\CardCatalogue\CardCatalogue\obj\Debug\CardCatalogue.exe
 C:\Users\Jolly\Desktop\CardCatalogue\CardCatalogue\CardCatalogue\obj\Debug\CardCatalogue.pdb
 C:\Users\Jolly\Desktop\CardCatalogue\CardCatalogue\CardCatalogue\obj\Debug\CardCatalogue.AddCardForm.resources
+C:\Users\Jolly\Desktop\CardCatalogue\CardCatalogue\CardCatalogue\bin\Debug\HtmlAgilityPack.dll
+C:\Users\Jolly\Desktop\CardCatalogue\CardCatalogue\CardCatalogue\bin\Debug\HtmlAgilityPack.pdb
+C:\Users\Jolly\Desktop\CardCatalogue\CardCatalogue\CardCatalogue\bin\Debug\HtmlAgilityPack.xml

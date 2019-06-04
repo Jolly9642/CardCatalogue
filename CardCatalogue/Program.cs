@@ -9,7 +9,9 @@ namespace CardCatalogue
     static class Program
     {
         /// <summary>
-        /// The main entry point for the application.
+        /// This is a card cataloguer that creates XML files that are easily uploaded into excel or access. 
+        /// It would also be a nice feature to connect to sites such as tcgplayer and update the price of each card.
+        /// 
         /// </summary>
         [STAThread]
         static void Main()
@@ -17,7 +19,7 @@ namespace CardCatalogue
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new InitialForm());
-           //added a remove card function. Need to create an edit function next. 
+          
 
         }
     }

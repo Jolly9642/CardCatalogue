@@ -36,6 +36,8 @@
             this.cardListBox = new System.Windows.Forms.ListBox();
             this.removeCardButton = new System.Windows.Forms.Button();
             this.editCardButton = new System.Windows.Forms.Button();
+            this.updateButton = new System.Windows.Forms.Button();
+            this.warningLabelForUpdateButton = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // nameOfCollection
@@ -112,11 +114,34 @@
             this.editCardButton.UseVisualStyleBackColor = true;
             this.editCardButton.Click += new System.EventHandler(this.editCardButton_Click);
             // 
+            // updateButton
+            // 
+            this.updateButton.Location = new System.Drawing.Point(26, 411);
+            this.updateButton.Name = "updateButton";
+            this.updateButton.Size = new System.Drawing.Size(99, 23);
+            this.updateButton.TabIndex = 9;
+            this.updateButton.Text = "Update Prices ";
+            this.updateButton.UseVisualStyleBackColor = true;
+            this.updateButton.Click += new System.EventHandler(this.updateButton_Click);
+            // 
+            // warningLabelForUpdateButton
+            // 
+            this.warningLabelForUpdateButton.AutoSize = true;
+            this.warningLabelForUpdateButton.Location = new System.Drawing.Point(23, 459);
+            this.warningLabelForUpdateButton.Name = "warningLabelForUpdateButton";
+            this.warningLabelForUpdateButton.Size = new System.Drawing.Size(785, 13);
+            this.warningLabelForUpdateButton.TabIndex = 10;
+            this.warningLabelForUpdateButton.Text = "This button is not finished and connects to a website that needs to be parsed out" +
+    " to find the prices for specific cards and then update them in the selected coll" +
+    "ection. ";
+            // 
             // InitialForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(894, 509);
+            this.Controls.Add(this.warningLabelForUpdateButton);
+            this.Controls.Add(this.updateButton);
             this.Controls.Add(this.editCardButton);
             this.Controls.Add(this.removeCardButton);
             this.Controls.Add(this.cardListBox);
@@ -142,5 +167,7 @@
         private System.Windows.Forms.ListBox cardListBox;
         private System.Windows.Forms.Button removeCardButton;
         private System.Windows.Forms.Button editCardButton;
+        private System.Windows.Forms.Button updateButton;
+        private System.Windows.Forms.Label warningLabelForUpdateButton;
     }
 }
