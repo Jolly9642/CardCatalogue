@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<ArrayOfCardCollection xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <CardCollection>
+    <CollectionName>Anotherone.xml</CollectionName>
+    <CardName>BlueMage</CardName>
+    <CardPrice>23</CardPrice>
+    <InDeck>true</InDeck>
+  </CardCollection>
+  <CardCollection>
+    <CollectionName>Anotherone.xml</CollectionName>
+    <CardName>Emrakul</CardName>
+    <CardPrice>232</CardPrice>
+    <InDeck>true</InDeck>
+  </CardCollection>
+</ArrayOfCardCollection>

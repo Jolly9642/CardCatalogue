@@ -7,6 +7,7 @@ using System.IO;
 using System.Xml;
 using System.Xml.Serialization;
 using System.Windows.Forms;
+using System.Data.Linq;
 using System.Web;
 using System.Diagnostics;
 using HtmlAgilityPack;
@@ -21,7 +22,7 @@ namespace CardCatalogue
         public double CardPrice { get; set; }
         public bool InDeck { get; set; }
        
-
+        
         public void CreateCollection(string collectionName)
         {
             //create a collection, and an XML file for it.
@@ -139,30 +140,7 @@ namespace CardCatalogue
             return pCardList;
         }
 
-        public async void UpdatePricesOnline()
-        {
-            System.Net.WebClient wc = new System.Net.WebClient();
-            string oCardName = "";
-            string oCardPrice = "";
-            //string webData = wc.DownloadString("https://www.mtggoldfish.com/prices/paper/standard");
-            //string[] substrings = webData.Split('<');
-
-            HtmlWeb web = new HtmlWeb();
-
-            var doc = await Task.Factory.StartNew(() => web.Load("https://www.mtggoldfish.com/prices/paper/standard.html"));
-
-            //var nodes = doc.DocumentNode.SelectNodes("/html/body/div//div//div//dl//dt//");
-            var nodes = doc.DocumentNode.SelectNodes("/html/body/div[2]/div[6]/div[2]/dl[1]/dt[6]");
-            var innerTexts = nodes.Select(node => node.InnerText);
-            Debug.WriteLine(innerTexts);
-            
-
-
-
-           
-            
-
-        }
+       
 
 
 

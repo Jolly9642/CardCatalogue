@@ -107,10 +107,6 @@ namespace CardCatalogue
 
         }
 
-        private void updateButton_Click(object sender, EventArgs e)
-        {
-            CardCollection updateColl = new CardCollection();
-            updateColl.UpdatePricesOnline();
-        }
+        
     }
 }

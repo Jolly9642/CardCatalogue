@@ -36,20 +36,21 @@
             this.cardListBox = new System.Windows.Forms.ListBox();
             this.removeCardButton = new System.Windows.Forms.Button();
             this.editCardButton = new System.Windows.Forms.Button();
-            this.updateButton = new System.Windows.Forms.Button();
-            this.warningLabelForUpdateButton = new System.Windows.Forms.Label();
+            this.collectionLabel = new System.Windows.Forms.Label();
+            this.newCollLabel = new System.Windows.Forms.Label();
+            this.CardsLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // nameOfCollection
             // 
-            this.nameOfCollection.Location = new System.Drawing.Point(106, 190);
+            this.nameOfCollection.Location = new System.Drawing.Point(29, 190);
             this.nameOfCollection.Name = "nameOfCollection";
             this.nameOfCollection.Size = new System.Drawing.Size(202, 20);
             this.nameOfCollection.TabIndex = 0;
             // 
             // collectionNameButton
             // 
-            this.collectionNameButton.Location = new System.Drawing.Point(102, 230);
+            this.collectionNameButton.Location = new System.Drawing.Point(29, 255);
             this.collectionNameButton.Name = "collectionNameButton";
             this.collectionNameButton.Size = new System.Drawing.Size(100, 23);
             this.collectionNameButton.TabIndex = 1;
@@ -60,7 +61,7 @@
             // collectionNameLabel
             // 
             this.collectionNameLabel.AutoSize = true;
-            this.collectionNameLabel.Location = new System.Drawing.Point(106, 142);
+            this.collectionNameLabel.Location = new System.Drawing.Point(33, 174);
             this.collectionNameLabel.Name = "collectionNameLabel";
             this.collectionNameLabel.Size = new System.Drawing.Size(96, 13);
             this.collectionNameLabel.TabIndex = 3;
@@ -69,7 +70,7 @@
             // collectionListBox
             // 
             this.collectionListBox.FormattingEnabled = true;
-            this.collectionListBox.Location = new System.Drawing.Point(339, 115);
+            this.collectionListBox.Location = new System.Drawing.Point(339, 39);
             this.collectionListBox.Name = "collectionListBox";
             this.collectionListBox.Size = new System.Drawing.Size(120, 290);
             this.collectionListBox.TabIndex = 4;
@@ -77,7 +78,7 @@
             // 
             // collectionSelectionButton
             // 
-            this.collectionSelectionButton.Location = new System.Drawing.Point(339, 412);
+            this.collectionSelectionButton.Location = new System.Drawing.Point(339, 400);
             this.collectionSelectionButton.Name = "collectionSelectionButton";
             this.collectionSelectionButton.Size = new System.Drawing.Size(120, 23);
             this.collectionSelectionButton.TabIndex = 5;
@@ -88,7 +89,7 @@
             // cardListBox
             // 
             this.cardListBox.FormattingEnabled = true;
-            this.cardListBox.Location = new System.Drawing.Point(565, 115);
+            this.cardListBox.Location = new System.Drawing.Point(565, 104);
             this.cardListBox.Name = "cardListBox";
             this.cardListBox.Size = new System.Drawing.Size(256, 290);
             this.cardListBox.TabIndex = 6;
@@ -96,7 +97,7 @@
             // 
             // removeCardButton
             // 
-            this.removeCardButton.Location = new System.Drawing.Point(565, 412);
+            this.removeCardButton.Location = new System.Drawing.Point(565, 400);
             this.removeCardButton.Name = "removeCardButton";
             this.removeCardButton.Size = new System.Drawing.Size(89, 23);
             this.removeCardButton.TabIndex = 7;
@@ -106,7 +107,7 @@
             // 
             // editCardButton
             // 
-            this.editCardButton.Location = new System.Drawing.Point(677, 412);
+            this.editCardButton.Location = new System.Drawing.Point(708, 400);
             this.editCardButton.Name = "editCardButton";
             this.editCardButton.Size = new System.Drawing.Size(75, 23);
             this.editCardButton.TabIndex = 8;
@@ -114,34 +115,43 @@
             this.editCardButton.UseVisualStyleBackColor = true;
             this.editCardButton.Click += new System.EventHandler(this.editCardButton_Click);
             // 
-            // updateButton
+            // collectionLabel
             // 
-            this.updateButton.Location = new System.Drawing.Point(26, 411);
-            this.updateButton.Name = "updateButton";
-            this.updateButton.Size = new System.Drawing.Size(99, 23);
-            this.updateButton.TabIndex = 9;
-            this.updateButton.Text = "Update Prices ";
-            this.updateButton.UseVisualStyleBackColor = true;
-            this.updateButton.Click += new System.EventHandler(this.updateButton_Click);
+            this.collectionLabel.AutoSize = true;
+            this.collectionLabel.Location = new System.Drawing.Point(336, 332);
+            this.collectionLabel.MaximumSize = new System.Drawing.Size(100, 0);
+            this.collectionLabel.Name = "collectionLabel";
+            this.collectionLabel.Size = new System.Drawing.Size(98, 65);
+            this.collectionLabel.TabIndex = 11;
+            this.collectionLabel.Text = "Select a Collection to see the cards in that collection and hit the button to add" +
+    " cards.";
             // 
-            // warningLabelForUpdateButton
+            // newCollLabel
             // 
-            this.warningLabelForUpdateButton.AutoSize = true;
-            this.warningLabelForUpdateButton.Location = new System.Drawing.Point(23, 459);
-            this.warningLabelForUpdateButton.Name = "warningLabelForUpdateButton";
-            this.warningLabelForUpdateButton.Size = new System.Drawing.Size(785, 13);
-            this.warningLabelForUpdateButton.TabIndex = 10;
-            this.warningLabelForUpdateButton.Text = "This button is not finished and connects to a website that needs to be parsed out" +
-    " to find the prices for specific cards and then update them in the selected coll" +
-    "ection. ";
+            this.newCollLabel.AutoSize = true;
+            this.newCollLabel.Location = new System.Drawing.Point(29, 227);
+            this.newCollLabel.Name = "newCollLabel";
+            this.newCollLabel.Size = new System.Drawing.Size(165, 13);
+            this.newCollLabel.TabIndex = 12;
+            this.newCollLabel.Text = "This is to create a new collection.";
+            // 
+            // CardsLabel
+            // 
+            this.CardsLabel.AutoSize = true;
+            this.CardsLabel.Location = new System.Drawing.Point(565, 85);
+            this.CardsLabel.Name = "CardsLabel";
+            this.CardsLabel.Size = new System.Drawing.Size(34, 13);
+            this.CardsLabel.TabIndex = 13;
+            this.CardsLabel.Text = "Cards";
             // 
             // InitialForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(894, 509);
-            this.Controls.Add(this.warningLabelForUpdateButton);
-            this.Controls.Add(this.updateButton);
+            this.Controls.Add(this.CardsLabel);
+            this.Controls.Add(this.newCollLabel);
+            this.Controls.Add(this.collectionLabel);
             this.Controls.Add(this.editCardButton);
             this.Controls.Add(this.removeCardButton);
             this.Controls.Add(this.cardListBox);
@@ -167,7 +177,8 @@
         private System.Windows.Forms.ListBox cardListBox;
         private System.Windows.Forms.Button removeCardButton;
         private System.Windows.Forms.Button editCardButton;
-        private System.Windows.Forms.Button updateButton;
-        private System.Windows.Forms.Label warningLabelForUpdateButton;
+        private System.Windows.Forms.Label collectionLabel;
+        private System.Windows.Forms.Label newCollLabel;
+        private System.Windows.Forms.Label CardsLabel;
     }
 }
